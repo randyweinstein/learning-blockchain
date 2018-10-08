@@ -17,7 +17,6 @@ Run: python3 ./blockchain.py --port=5001
 Run: python3 ./blockchain.py --port=5000
 '''
 
-
 port = 5000
 
 class Blockchain:
@@ -154,7 +153,7 @@ def new_transaction():
             ''', 400
 
     index = blockchain.new_transaction(values['sender'], values['recipient'], values['amount'])
-    reponse = {"message": "Transaction will be added to block {index}"}
+    reponse = {'message': f'Transaction will be added to block {index}'}
     return jsonify(reponse), 201
 
 @app.route('/mine', methods=['GET'])
